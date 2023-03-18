@@ -53,7 +53,7 @@ cp -r dotfiles/dot_local/* .local
 cp -r dotfiles/dot_config/* .config
 cp dotfiles/extras/wrapped.desktop /usr/share/wayland-sessions/
 ```
-Install NvChad Configs folling their [guide](https://nvchad.com/docs/quickstart/install)
+Install NvChad Configs following their [guide](https://nvchad.com/docs/quickstart/install)
 
 Ensure script permissions
 ```
