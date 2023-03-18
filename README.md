@@ -30,7 +30,7 @@ Software required for widgets to work:
 * **blueberry** - bluetooth gui
 
 ## Install Guide
-DISCLAIMER: These dotfiles are held together with duct tape and saftey pins so installing may require troubleshooting outside of the guide
+DISCLAIMER: These dotfiles are held together with duct tape and saftey pins so installing may require troubleshooting outside of the guide. Furthermore, this guide assumes you are using Arch Linux.
 
 Dependencies
 ```
@@ -59,6 +59,9 @@ Ensure script permissions
 chmod +x .local/bin/*
 chmod +x .config/eww/scripts/*
 ```
+
+Enable sddm using ```systemctl enable sddm.service``` if you have not already
+
 Now just make sure you chose HyprWrapped when logging in on sddm!
 
 ## Credits
