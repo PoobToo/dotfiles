@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=HyprWrapped
+Comment=An intelligent dynamic tiling Wayland compositor
+Exec=.local/bin/hlwrapped
+Type=Application
