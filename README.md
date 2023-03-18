@@ -32,37 +32,39 @@ Software required for widgets to work:
 ## Install Guide
 DISCLAIMER: These dotfiles are held together with duct tape and saftey pins so installing may require troubleshooting outside of the guide. Furthermore, this guide assumes you are using Arch Linux.
 
-Dependencies
+### Dependencies
 ```
 wayland hyprland sddm foot neovide waybar-hyprland-git qjackctl deadd-notification-center-bin eww-wayland tofi gtklock-git gtk3 gtk4 playerctl gjs grep awk jq socat swww-git hyprpicker-git pipewire wireplumber pipewire-alsa pipewire-jack pipewire-pulse pipewire-audio wlsunset blueberry brightnessctl 
 ```
-In case swww compile fails, run 
+### In case swww compile fails, run 
 ```
 rustup default stable
 ```
 
-Copy repository
+### Copy repository
 ```
 git clone https://github.com/PoobToo/dotfiles.git
 ```
 
-Copy configs
+### Copy configs
 ```
 cp -r dotfiles/dot_local/* .local
 cp -r dotfiles/dot_config/* .config
 cp dotfiles/extras/wrapped.desktop /usr/share/wayland-sessions/
 ```
-Install NvChad Configs following their [guide](https://nvchad.com/docs/quickstart/install)
+### Install NvChad Configs following their [guide](https://nvchad.com/docs/quickstart/install)
 
-Ensure script permissions
+### Install JetBrainsMono Nerd Font and Iosevka Nerd Font. I reccommend using [getnf](https://github.com/ronniedroid/getnf)
+
+### Ensure script permissions
 ```
 chmod +x .local/bin/*
 chmod +x .config/eww/scripts/*
 ```
 
-Enable sddm using ```systemctl enable sddm.service``` if you have not already
+### Enable sddm using ```systemctl enable sddm.service``` if you have not already
 
-Now just make sure you chose HyprWrapped when logging in on sddm!
+### Now just make sure you chose HyprWrapped when logging in on sddm!
 
 ## Credits
 [@Aylur](https://github.com/Aylur/dotfiles) for most of the bar
