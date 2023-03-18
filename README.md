@@ -14,7 +14,6 @@
 | Notifications             | [deadd](https://github.com/phuhl/linux_notification_center)      |
 | Bar and Widgets         | [waybar](https://github.com/Alexays/Waybar) & [eww](https://github.com/elkowar/eww) |
 | Screenlock              | [GTKlock](https://github.com/jovanlanik/gtklock) |
-| Authenticator           | [xaskpass](https://github.com/user827/xaskpass) |
 
 
 ## Extras
