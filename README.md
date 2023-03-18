@@ -35,7 +35,7 @@ DISCLAIMER: These dotfiles are held together with duct tape and saftey pins so i
 
 Dependencies
 ```
-wayland hyprland sddm foot waybar-hyprland-git qjackctl deadd-notification-center-bin eww-wayland tofi gtklock-git gtk3 gtk4 playerctl gjs swww-git hyprpicker-git pipewire wireplumber pipewire-alsa pipewire-jack pipewire-pulse pipewire-audio 
+wayland hyprland sddm foot neovide waybar-hyprland-git qjackctl deadd-notification-center-bin eww-wayland tofi gtklock-git gtk3 gtk4 playerctl gjs swww-git hyprpicker-git pipewire wireplumber pipewire-alsa pipewire-jack pipewire-pulse pipewire-audio 
 ```
 In case swww compile fails, run 
 ```
