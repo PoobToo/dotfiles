@@ -1,0 +1,13 @@
+(defvar main_monitor 0)
+(defvar real_name "Ryan Wattson")
+(defvar user_name "Poob")
+(defvar profile_picture "assets/avatar.jpg")
+
+(include "./yuck/vars.yuck")
+(include "./yuck/panel.yuck")
+(include "./yuck/osd.yuck")
+(include "./yuck/powermenu.yuck")
+(include "./yuck/datemenu.yuck")
+(include "./yuck/quicksettings.yuck")
+(include "./yuck/desktop.yuck")
+(include "./yuck/windows.yuck")

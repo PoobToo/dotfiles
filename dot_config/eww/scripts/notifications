@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+function toggle_on {
+notify-send.py a --hint boolean:deadd-notification-center:true \
+                 string:type:unpausePopups
+echo "on"
+}
+
+function toggle_off {
+notify-send.py a --hint boolean:deadd-notification-center:true string:type:pausePopups
+echo "off"
+}
+
+function icon {
+    echo '󰂚'
+}
+function state {
+#working on making the state dynamic
+  echo "on"
+}
+
+if [[ $1 == 'toggle_on' ]]; then toggle_on; fi
+if [[ $1 == 'toggle_off' ]]; then toggle_off; fi
+if [[ $1 == 'icon' ]]; then icon; fi
+if [[ $1 == 'state' ]]; then state; fi
+if [[ $1 == 'count' ]]; then swaync-client --count; fi
+if [[ $1 == 'open' ]]; then swaync-client --open-panel; fi

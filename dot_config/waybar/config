@@ -1,0 +1,21 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 41, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 0, // Gaps between modules (4px)
+    // Choose the order of the modules
+    // "margin-left":25,
+    // "margin-right":25,
+    "margin-bottom":0,
+    "margin-top":0,
+    "modules-center": ["wlr/workspaces"],
+    "exclusive": false,
+    "mode": "overlay"
+    },
+    "wlr/workspaces": {
+  "format": "{icon}",
+  "on-click": "activate",
+  "sort-by-number": true
+}
+

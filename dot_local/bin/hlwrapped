@@ -1,0 +1,8 @@
+#!/bin/sh
+
+export GDK_SCALE=1
+export XCURSOR_SIZE=16
+export WINIT_UNIX_BACKEND=x11 neovide
+export MOZ_ENABLE_WAYLAND=1
+
+exec Hyprland

@@ -1,0 +1,204 @@
+# Default configuration imitating the look of gtk Arc theme.
+# By default sizes are pixels when screen height <= 1080. Otherwise they are 1/1080 of the
+# screen height. This can be changed with dialog.scale.
+
+title = 'Enter Password'
+# Try to grab keyboard but back off if it cannot be done.
+grab_keyboard = false
+show_hostname = false
+resizable = false
+# setting this to other than 32 uses the root depth
+depth = 32
+
+[dialog]
+# set to 'none' to use pango default font and size. Use mono to keep ssh
+# fingerprint formatting.
+font = 'JetBrainsMono Nerd Font'
+#font = 'sans serif 11'
+# To force the use of a specific font file. Improves the startup time a lot.
+#font_file = '/usr/share/fonts/TTF/DejaVuSansMono.ttf'
+font_file = 'none'
+# one of 'Ltr', 'Rtl', 'Neutral', 'WeakLtr', 'WeakRtl' or 'none' to derive from
+# keymap
+direction = 'none'
+foreground = '#CDD6F4'
+background = '#1E1E2E'
+# affected by label text direction
+alignment = 'Left'
+# the default label when none is given as an argument
+label = 'Please enter your authentication passphrase:'
+# set to 'none' to disable timeout
+input_timeout = 30
+indicator_label = 'Secret:'
+indicator_label_foreground = '#5c616c'
+scale = 'none'
+
+[dialog.layout_opts]
+# one of Center, TopRight, BottomLeft, MiddleCompact
+layout = 'Center'
+# Sizes are in pixels. Fractional numbers can be used instead of integers but these
+# might result in blurry lines. 'none' to calculate from font height.
+horizontal_spacing = 'none'
+vertical_spacing = 'none'
+# set to 'none' to disable wrapping
+text_width = 'none'
+
+[dialog.ok_button]
+label = 'OK'
+horizontal_spacing = 'none'
+vertical_spacing = 'none'
+border_width = 1.0
+# set both to 0 to disable rounding
+radius_x = 2.0
+radius_y = 2.0
+# 3D look:
+pressed_adjustment_x = 1.0
+pressed_adjustment_y = 1.0
+foreground = '#CDD6F4'
+border_color = '#87AAF0'
+border_color_pressed = '#b7c0d3'
+background = '#1E1E2E'
+# set to a color for a linear gradient
+background_stop = 'none'
+background_pressed = '#1E1E2E'
+background_pressed_stop = 'none'
+background_hover = '#292940'
+background_hover_stop = 'none'
+
+[dialog.cancel_button]
+label = 'Cancel'
+horizontal_spacing = 'none'
+vertical_spacing = 'none'
+border_width = 1.0
+# set both to 0 to disable rounding
+radius_x = 2.0
+radius_y = 2.0
+# 3D look:
+pressed_adjustment_x = 1.0
+pressed_adjustment_y = 1.0
+foreground = '#CDD6F4'
+border_color = '#87AAF0'
+border_color_pressed = '#b7c0d3'
+background = '#1E1E2E'
+background_stop = 'none'
+background_pressed = '##1E1E2E'
+background_pressed_stop = 'none'
+background_hover = '#292940'
+background_hover_stop = 'none'
+
+[dialog.clipboard_button]
+horizontal_spacing = 'none'
+vertical_spacing = 'none'
+border_width = 1.0
+# set both to 0 to disable rounding
+radius_x = 2.0
+radius_y = 2.0
+# 3D look:
+pressed_adjustment_x = 1.0
+pressed_adjustment_y = 1.0
+foreground = '#CDD6F4'
+border_color = '#cfd6e6'
+border_color_pressed = '#b7c0d3'
+background = '#1E1E2E'
+background_stop = 'none'
+background_pressed = '#1E1E2E'
+background_pressed_stop = 'none'
+background_hover = '#292940'
+background_hover_stop = 'none'
+
+[dialog.plaintext_button]
+label = '*'
+horizontal_spacing = 'none'
+vertical_spacing = 'none'
+border_width = 1.0
+# set both to 0 to disable rounding
+radius_x = 2.0
+radius_y = 2.0
+# 3D look:
+pressed_adjustment_x = 1.0
+pressed_adjustment_y = 1.0
+foreground = '#CDD6F4'
+border_color = '#cfd6e6'
+border_color_pressed = '#b7c0d3'
+background = '#1e1e2e'
+background_stop = 'none'
+background_pressed = '1e1e2e'
+background_pressed_stop = 'none'
+background_hover = '#292940'
+background_hover_stop = 'none'
+
+[dialog.indicator]
+border_width = 1.0
+foreground = '#CDD6F4'
+background = '#1e1e2e'
+background_stop = 'none'
+border_color = '#cfd6e6'
+border_color_focused = '#5294e2'
+indicator_color = '#d3d8e2'
+indicator_color_stop = 'none'
+# only implemented for circle for now
+blink = true
+# One of 'Classic', 'Circle' or 'Strings'
+type = 'Strings'
+
+[dialog.indicator.classic]
+min_count = 3
+max_count = 3
+# set to 0 to disable rounding
+radius_x = 2
+radius_y = 2
+# Set to 'none' to derive from text height
+horizontal_spacing = 'none'
+element_height = 'none'
+element_width = 'none'
+
+[dialog.indicator.circle]
+# 'none' to derive from text width
+diameter = 'none'
+light_up = true
+rotate = true
+rotation_speed_start = 0.10
+rotation_speed_gain = 1.05
+# angle in radians
+spacing_angle = 0.5
+indicator_count = 3
+# 'none' to derive from diameter
+indicator_width = 'none'
+lock_color = '#ffffff'
+
+[dialog.indicator.strings]
+radius_x = 2.0
+radius_y = 2.0
+horizontal_spacing = 'none'
+vertical_spacing = 'none'
+# one of 'Custom', 'Disco' or 'Asterisk'
+strings = 'Disco'
+
+[dialog.indicator.strings.disco]
+min_count = 2
+max_count = 2
+# to use three states to differentiate between adding a letter and deleting one
+three_states = true
+
+[dialog.indicator.strings.custom]
+# one of 'Left', 'Center' or 'Right'
+alignment = 'Center'
+justify = false
+randomize = true
+# to differentiate between different states specify at least 3 or 4 strings
+# first string indicates paste
+strings = [
+  'pasted 🤯',
+  '(っ-̶●̃益●̶̃)っ ,︵‿ ',
+  '(⊙.⊙(☉̃ₒ☉)⊙.⊙)',
+  'ʕ•́ᴥ•̀ʔっ',
+  'ヽ(´ー`)人(´∇｀)人(`Д´)ノ',
+]
+
+[dialog.indicator.strings.asterisk]
+asterisk = "*"
+# one of 'Left', 'Center' or 'Right'
+alignment = 'Center'
+min_count = 10
+max_count = 20
+
