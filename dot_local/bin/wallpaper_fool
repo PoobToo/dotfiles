@@ -1,7 +1,7 @@
 #!/bin/sh
 
 function load_wp(){
-    swww img /home/leo/Wallpapers/FoolMoon.png -t wipe --transition-wave 0.0,0.0,1.0,1.0 --transition-duration .8 --transition-step 255 --transition-fps 60 
+    swww img .config/eww/wallpapers/FoolMoon.png -t wipe --transition-wave 0.0,0.0,1.0,1.0 --transition-duration .8 --transition-step 255 --transition-fps 60 
 }
 
 #perform cleanup and exit
