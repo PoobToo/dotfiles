@@ -52,7 +52,6 @@ Copy configs
 cp -r dotfiles/dot_local/* .local
 cp -r dotfiles/dot_config/* .config
 cp dotfiles/extras/wrapped.desktop /usr/share/wayland-sessions/
-cp -r dotfiles/extras/sddm/* /usr/share/sddm/
 ```
 
 Ensure script permissions
