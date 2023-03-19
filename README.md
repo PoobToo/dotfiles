@@ -1,7 +1,5 @@
 # Dotfiles
-[![Video Demo](https://img.youtube.com/vi/_yMVCG_dido/hqdefault.jpg)](https://youtu.be/_yMVCG_dido)
-
-(this is a video)
+[Video Demo](https://youtu.be/TZMfpNfRKUQ)
 
 ## Features
 | Software                  | Name                                |
