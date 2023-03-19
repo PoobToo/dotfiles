@@ -1,5 +1,5 @@
 # Dotfiles
-'placeholder for video demo'
+[![Video Demo](https://img.youtube.com/vi/_yMVCG_dido/hqdefault.jpg)](https://youtu.be/_yMVCG_dido)
 
 ## Features
 | Software                  | Name                                |
