@@ -65,10 +65,10 @@ function screenshot {
     fi
 }
 
-if [[ $1 == 'applauncher'       ]]; then tofi-drun --drun-launch=true; fi
+if [[ $1 == 'applauncher'    ]]; then tofi-drun --drun-launch=true; fi
 if [[ $1 == 'pavu'           ]]; then pavucontrol; fi
 if [[ $1 == 'network'        ]]; then network; fi
-if [[ $1 == 'qctl'            ]]; then qjackctl; fi
+if [[ $1 == 'qctl'           ]]; then qjackctl; fi
 if [[ $1 == 'brightness'     ]]; then wl-gammactl; fi
 if [[ $1 == 'bluetooth'      ]]; then blueberry; fi
 if [[ $1 == 'powermenu'      ]]; then powermenu; fi
