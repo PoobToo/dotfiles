@@ -1,3 +1,5 @@
+# HORRENDOUSLY outdated. Check out [Aylur](https://github.com/Aylur/dotfiles) instead
+
 # Dotfiles
 [Video Demo](https://youtu.be/TZMfpNfRKUQ)
 
