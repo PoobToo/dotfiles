@@ -1,0 +1,121 @@
+@define-color foreground #cedaf0;
+@define-color background #191f13;
+@define-color cursor #cedaf0;
+
+@define-color color0 #191f13;
+@define-color color1 #457BEF;
+@define-color color2 #748BA4;
+@define-color color3 #6695F1;
+@define-color color4 #91A6A5;
+@define-color color5 #8EB0F2;
+@define-color color6 #A2B7ED;
+@define-color color7 #cedaf0;
+@define-color color8 #9098a8;
+@define-color color9 #457BEF;
+@define-color color10 #748BA4;
+@define-color color11 #6695F1;
+@define-color color12 #91A6A5;
+@define-color color13 #8EB0F2;
+@define-color color14 #A2B7ED;
+@define-color color15 #cedaf0;
+* {
+  transition: 0.2s;
+}
+
+window {
+	font-family: "FiraCode Nerd Font Mono";
+	font-size: 13px;
+}
+
+window {
+    margin: 0px;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+#input {
+    padding: 4px;
+    margin: 20px;
+    padding-left: 20px;
+    border: none;
+    color: @foreground;
+    font-weight: bold;
+    background: linear-gradient(70deg, @color1, @color2);
+    animation: gradient_f 7s linear infinite;
+   	outline: none;
+    border-radius: 10px;
+}
+
+
+#inner-box {
+    margin: 20px;
+    margin-top: 0px;
+    border: none;
+    color: @foreground;
+    border-radius: 10px;
+}
+
+#inner-box * {
+    transition: none;
+}
+
+#outer-box {
+    margin: 0px;
+    border: none;
+    padding: 0px;
+    border-radius: 10px;
+}
+
+#scroll {
+    margin-top: 5px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+#text:selected {
+    color: #fff;
+    font-weight: bold;
+}
+
+#img {
+    margin-right: 20px;
+    background: transparent;
+}
+
+#text {
+    margin: 0px;
+    border: none;
+    padding: 0px;
+    background: transparent;
+}
+
+#entry {
+    margin: 0px;
+    border: none;
+    border-radius: 10px;
+    background-color: transparent;
+    min-height:32px;
+    font-weight: bold;
+}
+
+#entry:selected {
+    outline: none;
+    margin: 0px;
+    border: none;
+    border-radius: 10px;
+    background: @color1;
+}
+
+@keyframes gradient_f {
+  0% {
+    background-position: 0% 200%;
+  }
+
+  50% {
+    background-position: 200% 0%;
+  }
+
+  100% {
+    background-position: 400% 200%;
+  }

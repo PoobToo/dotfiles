@@ -1,0 +1,161 @@
+{ 
+ "layer" : "top",
+       "position" : "top",
+       "spacing" : 0,
+       "margin-bottom" : 0,
+       "margin-top" : 0,
+       "modules-left" : ["clock", "hyprland/window"],
+       "modules-center" : ["hyprland/workspaces"],
+       "modules-right" : ["wireplumber", "backlight", "cpu", "memory", "battery", "custom/bruh", "bluetooth", "network", "group/powergroup"],
+       "exclusive" : true,
+
+        "hyprland/workspaces" : {
+          "on-click" : "activate",
+          "sort-by-number" : true
+        },
+
+        "hyprland/window" : {
+          "max-length" : 30,
+          "rewrite" : {
+            "(.*) — LibreWolf" : "󰈹 "
+          }
+        },
+
+        "clock" : {
+         "format" : "{:%H:%M} ",
+         "format-alt" : "{:%A, %B %d, %Y (%R)} ",
+         "tooltip" : false,
+         "actions" : {
+            "on-click-right" : "mode",
+            "on-click-forward" : "tz_up",
+            "on-click-backward" : "tz_down",
+            "on-scroll-up" : "shift_up",
+            "on-scroll-down" : "shift_down",
+          }
+        },
+
+        "group/powergroup" : {
+          "orientation" : "inherit",
+          "drawer" : {
+            "transition-duration" : 500,
+            "children-class" : "drawer",
+            "transition-left-to-right" : false,
+          },
+          "modules" : [
+            "custom/power",
+            "custom/restart",
+            "custom/logout",
+            "custom/lock",
+          ]
+        },
+
+        "custom/lock" : {
+          "format" : "",
+          "on-click" : "hyprlock",
+          "tooltip" : false
+        },
+
+        "custom/logout" : {
+          "format" : "󰍃 ",
+          "on-click" : "hyprctl dispatch exit",
+          "tooltip" : false
+        },
+
+        "custom/restart" : {
+          "format" : " ",
+          "on-click" : "shutdown -r now",
+          "tooltip" : false
+        },
+
+        "custom/power" : {
+          "format" : "",
+          "on-click" : "shutdown now",
+          "tooltip" : false
+        },
+       
+        "custom/bruh" : {
+         "format" : "{} {icon}",
+         "tooltip" : false,
+         "format-icons" : {
+           "notification" : "󱅫",
+           "none" : "",
+           "dnd-notification" : " ",
+           "dnd-none" : "󰂛",
+           "inhibited-notification" : " ",
+           "inhibited-none" : "",
+           "dnd-inhibited-notification" : " ",
+           "dnd-inhibited-none" : " "
+           },
+         "return-type" : "json",
+         "exec-if" : "which swaync-client",
+         "exec" : "swaync-client -swb",
+         "on-click" : "sleep 0.1 && swaync-client -t -sw",
+         "on-click-right" : "sleep 0.1 && swaync-client -d -sw",
+         "escape" : true
+         },
+
+        "network" : {
+          "interface" : "wlp1s0",
+         "format-wifi" : "{icon}",
+         "format-icons" : ["󰤟", "󰤢", "󰤥", "󰤨"],
+         "format-ethernet" : "󰈁",
+         "format-disconnected" : "",
+         "tooltip" : false
+        },
+
+        "bluetooth" : {
+         "controller" : "radish",
+         "format" : "",
+         "format-disabled" : "",
+         "format-off" : "",
+         "format-connected" : " {num_connections}",
+         "tooltip-format" : "{controller_alias}\t{controller_address}",
+         "tooltip-format-connected" : "{device_enumerate}",
+         "tooltip-format-enumerate-connected" : "{device_alias}\t{device_address}"
+        },
+
+        "temperature" : {
+          "format" : "{temperatureC}°C "
+        },
+
+        "memory" : {
+          "format" : "{percentage}%   ",
+          "tooltip" : false
+        },
+
+        "battery" : {
+          "bat" : "BATT",
+          "interval" : 60,
+          "states" : {
+            "warning" : 30,
+            "critical" : 15,
+          },
+         "format" : "{capacity}% {icon}",
+         "format-icons" : [ " ", " ", " ", " ", " " ],
+         "max-length" : 25
+        },
+
+        "cpu" : {
+          "format" : "{usage}%   ",
+          "tooltip" : false
+        },
+
+        "backlight" : {
+         "device" : "intel_backlight",
+         "format" : "{percent}% {icon}",
+         "format-icons" : [ "󰃞", "󰃟", "󰃠" ]
+        },
+
+        "wireplumber" : {
+         "format" : "{volume}% {icon}",
+         "format-muted" : "",
+         "on-click" : "qjackctl",
+         "format-icons" : [ "", "", "" ],
+         "tooltip" : false
+        },
+
+        "tray" : {
+         "icon-size" : 21,
+         "spacing" : 10
+          }
+}

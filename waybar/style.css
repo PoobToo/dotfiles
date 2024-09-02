@@ -1,0 +1,149 @@
+@import "../../.cache/wal/colors-waybar.css";
+
+* {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 13px;
+}
+
+
+window#waybar {
+  background-color: transparent;
+}
+
+#bluetooth, #custom-power, #network, #backlight, #wireplumber, #clock, #custom-bruh {
+  background: @background;
+  color: @color3;
+  border-radius: 10px;
+  padding-right: 13px;
+  padding-left: 10px;
+  margin-top: 3px;
+  margin-bottom: 1px;
+  margin-right: 3px;
+  font-weight: bolder;
+
+}
+
+#custom-restart {
+  background: @background;
+  color: @foreground;
+  margin-top: 2px;
+  padding-right: 10px;
+  border-radius: 10px 0px 0px 10px;
+  font-weight: bolder;
+
+}
+
+#custom-logout {
+  background: @background;
+  color: @foreground;
+  font-weight: bolder;
+  margin-top: 2px;
+}
+
+#custom-lock {
+  background: @background;
+  color: @foreground;
+  margin-top: 2px;
+  margin-right: 3px;
+  padding-right: 10px;
+  border-radius: 0px 10px 10px 0px;
+  font-weight: bolder;
+}
+
+#window {
+  color: @foreground;
+  font-weight: bold;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#clock {
+  margin-left: 3px;
+}
+
+#cpu {
+  background: @color1;
+  color: @background;
+  margin-top: 3px;
+  padding-left: 13px;
+  border-radius: 10px 0px 0px 10px;
+}
+
+#memory {
+  background: @color1;
+  color: @background;
+  margin-top: 3px;
+  border-radius: 0px 0px 0px 0px;
+}
+
+#disk {
+  background: @background;
+  color: @color1;
+  margin-top: 3px;
+  padding-right: 13px;
+  border-radius: 0px 10px 10px 0px;
+}
+
+#battery {
+  background: @color1;
+  color: @background;
+  margin-top: 3px;
+  margin-right: 3px;
+  padding-right: 13px;
+  border-radius: 0px 10px 10px 0px;
+}
+
+#workspaces {
+  background-color: transparent;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-right: 10px;
+  margin-left: 25px;
+}
+
+#workspaces button label {
+  background: none;
+  color: @color3;
+  font-weight: bolder;
+}
+
+#workspaces button.active label {
+  background: none;
+  color: @background;
+  font-weight: bolder;
+}
+
+#workspaces button {
+  background-color: @background;
+  border-radius: 15px;
+  margin-right: 10px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  font-weight: bolder;
+  color: @background;
+  transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.68);
+}
+
+#workspaces button.active {
+  padding-right: 20px;
+  padding-left: 20px;
+  background: radial-gradient(at center, @color1, @color2, @color1);
+  background-size: 400% 400%;
+  animation: gradient_f 7s linear infinite;
+  transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
+@keyframes gradient_f {
+  0% {
+    background-position: 0% 200%;
+  }
+
+  50% {
+    background-position: 200% 0%;
+  }
+
+  100% {
+    background-position: 400% 200%;
+  }
+}
