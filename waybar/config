@@ -6,8 +6,13 @@
        "margin-top" : 0,
        "modules-left" : ["clock", "hyprland/window"],
        "modules-center" : ["hyprland/workspaces"],
-       "modules-right" : ["wireplumber", "backlight", "cpu", "memory", "battery", "custom/bruh", "bluetooth", "network", "group/powergroup"],
+       "modules-right" : ["tray", "wireplumber", "backlight", "cpu", "memory", "battery", "custom/bruh", "bluetooth", "network", "group/powergroup"],
        "exclusive" : true,
+       
+       "tray": {
+          "icon-size": 11,
+          "spacing": 10
+        },
 
         "hyprland/workspaces" : {
           "on-click" : "activate",
@@ -95,7 +100,7 @@
          },
 
         "network" : {
-          "interface" : "wlp1s0",
+          "interface" : "wlp5s0",
          "format-wifi" : "{icon}",
          "format-icons" : ["󰤟", "󰤢", "󰤥", "󰤨"],
          "format-ethernet" : "󰈁",
