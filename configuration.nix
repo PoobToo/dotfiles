@@ -57,6 +57,8 @@
     packages = with pkgs; [];
   };
 
+  nix.settings.experimental-features = [ "nix-command" ];
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
