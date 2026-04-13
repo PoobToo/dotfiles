@@ -12,7 +12,14 @@
     nixosConfigurations.radish = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./configuration.nix
+        ./hosts/radish/configuration.nix
+      ];
+    };
+
+    nixosConfigurations.onion = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./hosts/onion/configuration.nix
       ];
     };
 
