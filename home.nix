@@ -5,7 +5,10 @@
   home.homeDirectory = "/home/leo";
 
   home.packages = with pkgs; [
-    # user packages go here
+    firefox
+    tmux
+    foot
+    claude-code
   ];
 
   programs.git = {

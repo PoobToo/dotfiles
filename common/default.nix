@@ -40,14 +40,9 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
-  # System packages
   environment.systemPackages = with pkgs; [
     vim
     git
-    tmux
-    firefox
-    foot
-    claude-code
   ];
 
   # Desktop
