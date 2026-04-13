@@ -17,7 +17,7 @@
   programs.bash = {
     enable = true;
     shellAliases = {
-      rebuild = "sudo nixos-rebuild switch --flake ~/nixos#nixos && home-manager switch --flake ~/nixos#leo";
+      rebuild = "sudo nixos-rebuild switch --flake ~/nixos#radish && home-manager switch --flake ~/nixos#leo";
     };
   };
 
