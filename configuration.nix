@@ -86,11 +86,11 @@
 
   # List services that you want to enable:
 
-  services.openssh.enable = true;
+  # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 ];
-  networking.firewall.allowedUDPPorts = [ 22 ];
+  # networking.firewall.allowedTCPPorts = [ 22 ];
+  # networking.firewall.allowedUDPPorts = [ 22 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
