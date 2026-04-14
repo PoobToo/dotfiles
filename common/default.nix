@@ -7,6 +7,11 @@
 
   # Networking
   networking.networkmanager.enable = true;
+  networking.firewall.allowedUDPPorts = [ 41641 ];
+  networking.firewall.trustedInterfaces = [ "tailscale0" ];
+
+  # VPN
+  services.tailscale.enable = true;
 
   # Locale
   time.timeZone = "America/Los_Angeles";
@@ -29,11 +34,15 @@
     variant = "";
   };
 
+  # Shell
+  programs.fish.enable = true;
+
   # User account
   users.users.leo = {
     isNormalUser = true;
     description = "leo";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.fish;
   };
 
   # Nix settings
@@ -43,6 +52,13 @@
   environment.systemPackages = with pkgs; [
     vim
     git
+  ];
+
+  programs.nix-ld.enable = true;
+
+  # Fonts
+  fonts.packages = with pkgs; [
+    nerd-fonts.fira-code
   ];
 
   # Desktop
