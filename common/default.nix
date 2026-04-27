@@ -7,8 +7,12 @@
 
   # Networking
   networking.networkmanager.enable = true;
+  networking.networkmanager.dns = "systemd-resolved";
   networking.firewall.allowedUDPPorts = [ 41641 ];
   networking.firewall.trustedInterfaces = [ "tailscale0" ];
+
+  # DNS
+  services.resolved.enable = true;
 
   # VPN
   services.tailscale.enable = true;
@@ -60,6 +64,12 @@
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
   ];
+
+  # Gaming
+  programs.steam = {
+    enable = true;
+    extraCompatPackages = [ pkgs.proton-ge-bin ];
+  };
 
   # Desktop
   programs.niri.enable = true;

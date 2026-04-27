@@ -11,8 +11,43 @@
     tmux
     foot
     claude-code
+    wineWowPackages.stable
+    winetricks
+    xwayland-satellite
+    yazi
     uv
     tealdeer
+    logseq
+
+    # Archives
+    unzip
+    zip
+    unrar
+    p7zip
+    xz
+
+    # File tools
+    ripgrep
+    fd
+    file
+    imagemagick
+
+    # Wayland / niri desktop
+    wl-clipboard
+    grim
+    slurp
+    mako
+    fuzzel
+
+    # Media
+    mpv
+    imv
+
+    # CLI utilities
+    wget
+    btop
+    rsync
+    jq
   ];
 
   programs.git = {
@@ -32,6 +67,7 @@
       rebuild = "sudo nixos-rebuild switch --flake ~/nixos#radish && home-manager switch --flake ~/nixos#leo";
       battery = "cat /sys/class/power_supply/BATT/capacity";
       cat = "bat";
+      jj = "vim ~/logseq/journals/$(date +%Y_%m_%d).md";
     };
     plugins = [
       {
@@ -46,6 +82,7 @@
     shellAliases = {
       rebuild = "sudo nixos-rebuild switch --flake ~/nixos#radish && home-manager switch --flake ~/nixos#leo";
       battery = "cat /sys/class/power_supply/BATT/capacity";
+      jj = "vim ~/logseq/journals/$(date +%Y_%m_%d).md";
     };
   };
 
@@ -85,6 +122,9 @@
 
   programs.niri = {
     settings = {
+      spawn-at-startup = [
+        { command = [ "xwayland-satellite" ]; }
+      ];
       input.keyboard.xkb.layout = "us";
 
       binds = {
