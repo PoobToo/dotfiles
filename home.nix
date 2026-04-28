@@ -173,7 +173,7 @@
       binds = {
         # Applications
         "Mod+Return".action.spawn = [ "foot" ];
-        "Mod+R".action.spawn = [ "fuzzel" ];
+        "Mod+R" = { action.spawn = [ "dms" "ipc" "call" "spotlight" "open" ]; };
         "Mod+Shift+Slash".action.show-hotkey-overlay = {};
 
         # Window management
