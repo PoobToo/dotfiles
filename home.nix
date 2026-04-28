@@ -125,11 +125,29 @@
       spawn-at-startup = [
         { command = [ "xwayland-satellite" ]; }
       ];
-      input.keyboard.xkb.layout = "us";
+      input = {
+        keyboard.xkb.layout = "us";
+        focus-follows-mouse.enable = true;
+        workspace-auto-back-and-forth = true;
+      };
+
+      prefer-no-csd = true;
+
+      hotkey-overlay.skip-at-startup = true;
+
+      environment = {
+        DISPLAY = ":0";
+        ELECTRON_OZONE_PLATFORM_HINT = "auto";
+        QT_QPA_PLATFORM = "wayland";
+        QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+        XDG_SESSION_TYPE = "wayland";
+        XDG_CURRENT_DESKTOP = "niri";
+      };
 
       layout = {
         gaps = 16;
         center-focused-column = "never";
+        default-column-width.proportion = 0.5;
         preset-column-widths = [
           { proportion = 0.33333; }
           { proportion = 0.5; }
@@ -270,7 +288,6 @@
     settings = {
       main = {
         font = "JetBrainsMono Nerd Font:size=17";
-        dpi-aware = "yes";
         pad = "10x0";
       };
       cursor = {
