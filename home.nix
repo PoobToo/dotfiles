@@ -9,7 +9,7 @@
   home.packages = with pkgs; [
     firefox
     tmux
-    foot
+    # foot — managed by programs.foot below
     claude-code
     wineWowPackages.stable
     winetricks
@@ -64,7 +64,7 @@
       set -g fish_greeting
     '';
     shellAliases = {
-      rebuild = "sudo nixos-rebuild switch --flake ~/nixos#radish && home-manager switch --flake ~/nixos#leo";
+      rebuild = "sudo nixos-rebuild switch --flake ~/nixos#radish && home-manager switch --flake ~/nixos#leo-radish";
       battery = "cat /sys/class/power_supply/BATT/capacity";
       cat = "bat";
       jj = "vim ~/logseq/journals/$(date +%Y_%m_%d).md";
@@ -80,7 +80,7 @@
   programs.bash = {
     enable = true;
     shellAliases = {
-      rebuild = "sudo nixos-rebuild switch --flake ~/nixos#radish && home-manager switch --flake ~/nixos#leo";
+      rebuild = "sudo nixos-rebuild switch --flake ~/nixos#radish && home-manager switch --flake ~/nixos#leo-radish";
       battery = "cat /sys/class/power_supply/BATT/capacity";
       jj = "vim ~/logseq/journals/$(date +%Y_%m_%d).md";
     };
@@ -159,6 +159,24 @@
         # Layout
         "Mod+F".action.maximize-column = {};
         "Mod+Shift+F".action.fullscreen-window = {};
+      };
+    };
+  };
+
+  programs.foot = {
+    enable = true;
+    settings = {
+      main = {
+        font = "JetBrainsMono Nerd Font:size=17";
+        dpi-aware = "yes";
+        pad = "10x0";
+      };
+      cursor = {
+        style = "beam";
+        blink = "yes";
+      };
+      colors = {
+        alpha = "0.9";
       };
     };
   };

@@ -37,5 +37,15 @@
         ./home.nix
       ];
     };
+
+    homeConfigurations.leo-radish = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      modules = [
+        niri-flake.homeModules.niri
+        dms.homeModules.dank-material-shell
+        ./home.nix
+        ./hosts/radish/home.nix
+      ];
+    };
   };
 }
