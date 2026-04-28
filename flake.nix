@@ -17,7 +17,15 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, niri-flake, dms, nixvim, ... }: {
+  outputs = { self, nixpkgs, home-manager, niri-flake, dms, nixvim, ... }:
+  let
+    commonHomeModules = [
+      niri-flake.homeModules.niri
+      dms.homeModules.dank-material-shell
+      nixvim.homeModules.nixvim
+      ./home
+    ];
+  in {
     nixosConfigurations.radish = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -34,23 +42,12 @@
 
     homeConfigurations.leo = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      modules = [
-        niri-flake.homeModules.niri
-        dms.homeModules.dank-material-shell
-        nixvim.homeModules.nixvim
-        ./home
-      ];
+      modules = commonHomeModules;
     };
 
     homeConfigurations.leo-radish = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      modules = [
-        niri-flake.homeModules.niri
-        dms.homeModules.dank-material-shell
-        nixvim.homeModules.nixvim
-        ./home
-        ./hosts/radish/home.nix
-      ];
+      modules = commonHomeModules ++ [ ./hosts/radish/home.nix ];
     };
   };
 }
