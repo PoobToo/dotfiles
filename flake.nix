@@ -34,7 +34,7 @@
       modules = [
         niri-flake.homeModules.niri
         dms.homeModules.dank-material-shell
-        ./home.nix
+        ./home
       ];
     };
 
@@ -43,7 +43,7 @@
       modules = [
         niri-flake.homeModules.niri
         dms.homeModules.dank-material-shell
-        ./home.nix
+        ./home
         ./hosts/radish/home.nix
       ];
     };

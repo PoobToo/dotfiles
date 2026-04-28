@@ -58,6 +58,8 @@
     git
   ];
 
+  programs.nano.enable = false;
+
   programs.nix-ld.enable = true;
 
   # Fonts
