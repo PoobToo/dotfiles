@@ -9,7 +9,6 @@
     wineWowPackages.stable
     winetricks
     xwayland-satellite
-    yazi
     uv
     tealdeer
     logseq

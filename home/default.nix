@@ -11,12 +11,22 @@
     ./programs/bash.nix
     ./programs/shell-tools.nix
     ./programs/dms.nix
+    ./programs/nvim.nix
+    ./programs/yazi.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
 
   home.username = "leo";
   home.homeDirectory = "/home/leo";
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+    PAGER = "bat";
+    MANPAGER = "bat -l man -p";
+    BROWSER = "firefox";
+  };
 
   programs.home-manager.enable = true;
 

@@ -12,9 +12,12 @@
 
     dms.url = "github:AvengeMedia/DankMaterialShell/stable";
 
+    nixvim.url = "github:nix-community/nixvim/nixos-25.11";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
+
   };
 
-  outputs = { self, nixpkgs, home-manager, niri-flake, dms, ... }: {
+  outputs = { self, nixpkgs, home-manager, niri-flake, dms, nixvim, ... }: {
     nixosConfigurations.radish = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -34,6 +37,7 @@
       modules = [
         niri-flake.homeModules.niri
         dms.homeModules.dank-material-shell
+        nixvim.homeModules.nixvim
         ./home
       ];
     };
@@ -43,6 +47,7 @@
       modules = [
         niri-flake.homeModules.niri
         dms.homeModules.dank-material-shell
+        nixvim.homeModules.nixvim
         ./home
         ./hosts/radish/home.nix
       ];
