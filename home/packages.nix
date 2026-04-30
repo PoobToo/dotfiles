@@ -42,5 +42,6 @@
     btop
     rsync
     jq
+    age
   ];
 }
