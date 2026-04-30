@@ -13,6 +13,7 @@
     ./programs/dms.nix
     ./programs/nvim.nix
     ./programs/yazi.nix
+    ./secret-wrappers.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
