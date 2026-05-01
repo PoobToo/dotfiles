@@ -43,5 +43,6 @@
     rsync
     jq
     age
+    nodejs_22
   ];
 }
