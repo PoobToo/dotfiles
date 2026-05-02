@@ -39,6 +39,7 @@
     nixosConfigurations.onion = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
+	{ nixpkgs.overlays = [ nix-cachyos-kernel.overlays.default ]; }
         ./hosts/onion/configuration.nix
       ];
     };
