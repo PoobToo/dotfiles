@@ -76,5 +76,5 @@ Neovim is configured via `programs.nixvim` in `home/programs/nvim.nix` (nixvim f
 ## Key Details
 
 - Unfree packages are allowed in both nixpkgs contexts.
-- `onion` uses stock kernel (`linuxPackages_latest`) with `lib.mkForce` to override the CachyOS kernel from `common`; switch to CachyOS once initial setup is stable.
+- `onion` has Nvidia drivers configured (`hardware.nvidia`, open kernel modules). The CachyOS zen4 kernel from `common` is used — Zen 5 (Ryzen 9 9900X) is fully compatible with it.
 - The CachyOS kernel binary cache (`attic.xuyh0120.win/lantian`) is configured in `common/default.nix` — required to avoid building the kernel from source.
