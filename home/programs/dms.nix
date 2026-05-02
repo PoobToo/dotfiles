@@ -5,5 +5,6 @@
   programs.dank-material-shell = {
     enable = true;
     enableSystemMonitoring = false;
+    systemd.enable = true;
   };
 }
