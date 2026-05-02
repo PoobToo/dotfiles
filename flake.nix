@@ -2,22 +2,24 @@
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    home-manager.url = "github:nix-community/home-manager/release-25.11";
+    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     niri-flake.url = "github:sodiboo/niri-flake";
     niri-flake.inputs.nixpkgs.follows = "nixpkgs";
 
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+
     dms.url = "github:AvengeMedia/DankMaterialShell/stable";
 
-    nixvim.url = "github:nix-community/nixvim/nixos-25.11";
+    nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
   };
 
-  outputs = { self, nixpkgs, home-manager, niri-flake, dms, nixvim, ... }:
+  outputs = { self, nixpkgs, home-manager, niri-flake, nix-cachyos-kernel, dms, nixvim, ... }:
   let
     commonHomeModules = [
       niri-flake.homeModules.niri
@@ -29,6 +31,7 @@
     nixosConfigurations.radish = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
+        { nixpkgs.overlays = [ nix-cachyos-kernel.overlays.default ]; }
         ./hosts/radish/configuration.nix
       ];
     };

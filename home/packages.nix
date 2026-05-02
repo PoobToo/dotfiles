@@ -6,7 +6,7 @@
     tmux
     # foot — managed by programs.foot
     claude-code
-    wineWowPackages.stable
+    wineWow64Packages.stable
     winetricks
     xwayland-satellite
     uv

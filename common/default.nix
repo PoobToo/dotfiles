@@ -5,6 +5,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # CachyOS kernel with BORE scheduler
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-zen4;
+
   # Networking
   networking.networkmanager.enable = true;
   networking.networkmanager.dns = "systemd-resolved";
@@ -51,6 +54,8 @@
 
   # Nix settings
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.substituters = [ "https://attic.xuyh0120.win/lantian" ];
+  nix.settings.trusted-public-keys = [ "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" ];
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [

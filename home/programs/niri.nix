@@ -1,7 +1,8 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.niri = {
+    package = pkgs.niri;	#avoid compiling from source
     settings = {
       spawn-at-startup = [
         { command = [ "xwayland-satellite" ]; }
