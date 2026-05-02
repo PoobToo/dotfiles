@@ -7,7 +7,7 @@
       set -g fish_greeting
     '';
     shellAliases = {
-      rebuild = "sudo nixos-rebuild switch --flake ~/nixos#radish && home-manager switch --flake ~/nixos#leo-radish";
+      rebuild = "sudo nixos-rebuild switch --flake ~/nixos#(hostname) && home-manager switch --flake ~/nixos#leo-(hostname)";
       battery = "cat /sys/class/power_supply/BATT/capacity";
       cat = "bat";
       jj = "nvim ~/notes/journals/$(date +%Y_%m_%d).md";

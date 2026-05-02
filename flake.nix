@@ -53,5 +53,10 @@
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules = commonHomeModules ++ [ ./hosts/radish/home.nix ];
     };
+
+    homeConfigurations.leo-onion = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      modules = commonHomeModules ++ [ ./hosts/onion/home.nix ];
+    };
   };
 }
