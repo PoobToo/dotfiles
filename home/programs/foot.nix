@@ -12,7 +12,7 @@
         style = "beam";
         blink = "yes";
       };
-      colors = {
+      colors-dark = {
         alpha = "0.9";
       };
     };
