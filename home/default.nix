@@ -14,6 +14,7 @@
     ./programs/dms.nix
     ./programs/nvim.nix
     ./programs/yazi.nix
+    ./programs/gaming.nix
     ./secret-wrappers.nix
   ];
 

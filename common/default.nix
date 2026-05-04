@@ -78,6 +78,12 @@
     enable = true;
     extraCompatPackages = [ pkgs.proton-ge-bin ];
   };
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+  programs.gamemode.enable = true;
+  programs.gamescope.enable = true;
 
   # Desktop
   programs.niri.enable = true;

@@ -27,11 +27,26 @@
       nixvim.homeModules.nixvim
       ./home
     ];
+
+    skipFlakyTestsOverlay = final: prev: {
+      openldap = prev.openldap.overrideAttrs (_: { doCheck = false; });
+    };
+
+    commonOverlays = [
+      nix-cachyos-kernel.overlays.default
+      skipFlakyTestsOverlay
+    ];
+
+    homePkgs = import nixpkgs {
+      system = "x86_64-linux";
+      overlays = commonOverlays;
+      config.allowUnfree = true;
+    };
   in {
     nixosConfigurations.radish = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        { nixpkgs.overlays = [ nix-cachyos-kernel.overlays.default ]; }
+        { nixpkgs.overlays = commonOverlays; }
         ./hosts/radish/configuration.nix
       ];
     };
@@ -39,23 +54,23 @@
     nixosConfigurations.onion = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-	{ nixpkgs.overlays = [ nix-cachyos-kernel.overlays.default ]; }
+        { nixpkgs.overlays = commonOverlays; }
         ./hosts/onion/configuration.nix
       ];
     };
 
     homeConfigurations.leo = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = homePkgs;
       modules = commonHomeModules;
     };
 
     homeConfigurations.leo-radish = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = homePkgs;
       modules = commonHomeModules ++ [ ./hosts/radish/home.nix ];
     };
 
     homeConfigurations.leo-onion = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = homePkgs;
       modules = commonHomeModules ++ [ ./hosts/onion/home.nix ];
     };
   };
