@@ -17,9 +17,12 @@
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
+    nixvirt.url = "github:AshleyYakeley/NixVirt";
+    nixvirt.inputs.nixpkgs.follows = "nixpkgs";
+
   };
 
-  outputs = { self, nixpkgs, home-manager, niri-flake, nix-cachyos-kernel, dms, nixvim, ... }:
+  outputs = { self, nixpkgs, home-manager, niri-flake, nix-cachyos-kernel, dms, nixvim, nixvirt, ... }:
   let
     commonHomeModules = [
       niri-flake.homeModules.niri
@@ -53,8 +56,10 @@
 
     nixosConfigurations.onion = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = { inputs = { inherit nixvirt; }; };
       modules = [
         { nixpkgs.overlays = commonOverlays; }
+        nixvirt.nixosModules.default
         ./hosts/onion/configuration.nix
       ];
     };

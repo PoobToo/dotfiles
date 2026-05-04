@@ -4,6 +4,7 @@
   imports = [
     ../../common
     ./hardware-configuration.nix
+    ./virtualisation.nix
   ];
 
   networking.hostName = "onion";
