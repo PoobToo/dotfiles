@@ -1,9 +1,10 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
     ./packages.nix
     ./programs/niri.nix
+    ./programs/cursor.nix
     ./programs/fish.nix
     ./programs/foot.nix
     ./programs/git.nix

@@ -24,6 +24,8 @@
         QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
         XDG_SESSION_TYPE = "wayland";
         XDG_CURRENT_DESKTOP = "niri";
+        XCURSOR_THEME = "GoogleDot-Black";
+        XCURSOR_SIZE = "24";
       };
 
       layout = {
