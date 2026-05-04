@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       main = {
-        font = "JetBrainsMono Nerd Font:size=17";
+        font = "JetBrainsMono Nerd Font:size=15";
         pad = "10x0";
       };
       cursor = {

@@ -6,12 +6,10 @@
     tmux
     # foot — managed by programs.foot
     claude-code
-    wineWow64Packages.stable
-    winetricks
     xwayland-satellite
     uv
     tealdeer
-    logseq
+
 
     # Archives
     unzip
