@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     firefox
+    signal-desktop
     tmux
     # foot — managed by programs.foot
     claude-code
