@@ -13,6 +13,35 @@
   boot.initrd.luks.devices."luks-fb485ae4-a2c1-4bf8-b98d-dac30301f41a".device =
     "/dev/disk/by-uuid/fb485ae4-a2c1-4bf8-b98d-dac30301f41a";
 
+  # initrd ssh for remote luks decrypt
+  boot.kernelParams = [ "ip=dhcp" ];
+  boot.initrd.availableKernelModules = [ "r8169" ]; # onion realtek kernel mod
+  boot.initrd.network = {
+    enable = true;
+    ssh = {
+      enable = true;
+      port = 6222;
+      hostKeys = [ /etc/secrets/initrd/ssh_host_ed25519_key ];
+      authorizedKeys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHNsP9AqhdBh3CTpcGJUFBuchx1/XJGkneQsptUVLyii leo@radish"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFR2CCTgxL3aUeSD7g/r+9NViOiiWGBykc09tZI73iJF sauron@sauron"
+      ];
+    };
+  };
+
+  # SSH config
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+      PermitRootLogin = "no";
+    };
+  };
+  users.users.leo.openssh.authorizedKeys.keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHNsP9AqhdBh3CTpcGJUFBuchx1/XJGkneQsptUVLyii leo@radish"
+  ];
+
   # Nvidia funtimes
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.graphics.enable = true;
