@@ -1,4 +1,20 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
+let
+  windowsRdp = pkgs.writeShellScriptBin "windows-rdp" ''
+    set -eu
+    pw=$(${pkgs.age}/bin/age -d -i "$HOME/.config/age/key.txt" ${../../secrets/windows-rdp.age})
+    exec ${pkgs.freerdp}/bin/sdl-freerdp \
+      /v:192.168.122.10 \
+      /u:joe \
+      /p:"$pw" \
+      /cert:tofu \
+      /dynamic-resolution \
+      /clipboard \
+      /sound \
+      /drive:host,/home/leo \
+      "$@"
+  '';
+in
 {
   programs.niri.settings.outputs = {
     "LG Electronics LG ULTRAGEAR 109NTBKNT837" = {
@@ -13,5 +29,16 @@
       scale = 1.0;
       transform.rotation = 270;
     };
+  };
+
+  home.packages = [ pkgs.freerdp windowsRdp ];
+
+  xdg.desktopEntries.windows-rdp = {
+    name = "Windows (RDP)";
+    comment = "Connect to the Windows VM via RDP";
+    icon = "computer";
+    exec = "windows-rdp";
+    terminal = false;
+    categories = [ "Network" "RemoteAccess" ];
   };
 }
