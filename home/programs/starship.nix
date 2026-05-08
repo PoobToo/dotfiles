@@ -4,7 +4,12 @@
   programs.starship = {
     enable = true;
     settings = {
-      format = "$directory$git_branch$git_status$python$rust$nodejs$nix_shell$cmd_duration$line_break$character";
+      format = "$hostname$directory$git_branch$git_status$python$rust$nodejs$nix_shell$cmd_duration$line_break$character";
+      hostname = {
+        ssh_only = true;
+        format = "[$hostname]($style) ";
+        style = "bold red";
+      };
       directory = {
         style = "blue bold";
       };
