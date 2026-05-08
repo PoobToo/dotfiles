@@ -71,6 +71,18 @@
     };
   };
 
+  # Wake-on-LAN
+  systemd.services.wake-on-lan = {
+    description = "Enable Wake-on-LAN";
+    wantedBy = [ "multi-user.target" ];
+    after = [ "NetworkManager.service" ];
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+      ExecStart = "${pkgs.ethtool}/bin/ethtool -s enp12s0 wol g";
+    };
+  };
+
   # Re-pin after resume just in case
   systemd.services.nvidia-pin-clocks-resume = {
     description = "Re-pin NVIDIA memory clock after resume";
