@@ -61,6 +61,7 @@
   environment.systemPackages = with pkgs; [
     vim
     git
+    proton-vpn
   ];
 
   programs.nano.enable = false;
