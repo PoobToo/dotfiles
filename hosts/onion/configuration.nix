@@ -94,5 +94,10 @@
     };
   };
 
+  fileSystems."/home/leo/Work" = {
+    device = "/dev/disk/by-uuid/f9ca4008-5eee-4de4-a7ef-312653d52f7f";
+    fsType = "ext4";
+  };
+
   system.stateVersion = "25.11";
 }
