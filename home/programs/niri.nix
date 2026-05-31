@@ -11,6 +11,7 @@
         keyboard.xkb.layout = "us";
         focus-follows-mouse.enable = true;
         workspace-auto-back-and-forth = true;
+        power-key-handling.enable = false;
       };
 
       prefer-no-csd = true;

@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 let
   windowsRdp = pkgs.writeShellScriptBin "windows-rdp" ''
     set -eu
@@ -31,7 +31,20 @@ in
     };
   };
 
-  home.packages = [ pkgs.freerdp windowsRdp ];
+  home.packages = [
+    pkgs.freerdp
+    windowsRdp
+  ];
+
+  # Expose system-installed audio plugins to Reaper et al.
+  home.file = let
+    link = config.lib.file.mkOutOfStoreSymlink;
+  in {
+    ".vst3".source = link "/run/current-system/sw/lib/vst3";
+    ".vst".source = link "/run/current-system/sw/lib/vst";
+    ".clap".source = link "/run/current-system/sw/lib/clap";
+    ".lv2".source = link "/run/current-system/sw/lib/lv2";
+  };
 
   xdg.desktopEntries.windows-rdp = {
     name = "Windows (RDP)";

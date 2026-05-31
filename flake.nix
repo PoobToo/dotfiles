@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     niri-flake.url = "github:sodiboo/niri-flake";
@@ -14,7 +14,7 @@
 
     dms.url = "github:AvengeMedia/DankMaterialShell/stable";
 
-    nixvim.url = "github:nix-community/nixvim";
+    nixvim.url = "github:nix-community/nixvim/nixos-26.05";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
     nixvirt.url = "github:AshleyYakeley/NixVirt";

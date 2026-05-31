@@ -5,9 +5,12 @@
     ../../common
     ./hardware-configuration.nix
     ./virtualisation.nix
+    ./music.nix
   ];
 
   networking.hostName = "onion";
+
+  services.logind.powerKey = "poweroff";
 
   # Swap LUKS device (root LUKS lives in hardware-configuration.nix)
   boot.initrd.luks.devices."luks-fb485ae4-a2c1-4bf8-b98d-dac30301f41a".device =
