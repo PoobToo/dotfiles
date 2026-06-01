@@ -87,4 +87,10 @@
 
   # Desktop
   programs.niri.enable = true;
+
+  # Bluetooth (managed via the DMS control-center applet)
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
 }
