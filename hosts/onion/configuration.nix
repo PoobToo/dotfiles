@@ -5,7 +5,6 @@
     ../../common
     ./hardware-configuration.nix
     ./virtualisation.nix
-    ./music.nix
   ];
 
   networking.hostName = "onion";

@@ -36,16 +36,6 @@ in
     windowsRdp
   ];
 
-  # Expose system-installed audio plugins to Reaper et al.
-  home.file = let
-    link = config.lib.file.mkOutOfStoreSymlink;
-  in {
-    ".vst3".source = link "/run/current-system/sw/lib/vst3";
-    ".vst".source = link "/run/current-system/sw/lib/vst";
-    ".clap".source = link "/run/current-system/sw/lib/clap";
-    ".lv2".source = link "/run/current-system/sw/lib/lv2";
-  };
-
   xdg.desktopEntries.windows-rdp = {
     name = "Windows (RDP)";
     comment = "Connect to the Windows VM via RDP";
